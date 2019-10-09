@@ -72,7 +72,18 @@ public class Main
         Scanner input = new Scanner(System.in);
         System.out.println("Enter stuff in English:");
         String stuff = input.nextLine();
-        return lex.translate(stuff);
+        String output = "";
+        int x=0;
+        for(int y=0;y<stuff.length()-1;y++)
+        {
+            if(stuff.charAt(y)==' ')
+            {
+                output+=lex.translate(stuff.substring(x, y));
+                x=y;
+            }
+        }
+        output+=lex.translate(stuff.substring(x));
+        return output;
     }
     
 }
