@@ -6,6 +6,8 @@ public class Main
     public static void main(String[] args) 
     {
         Lexicon lex = new Lexicon();
+        
+        System.out.println(encodeInput(lex));
         System.out.println(decodeInput());
     }
 
@@ -65,4 +67,12 @@ public class Main
         String stuff = input.nextLine();
         return decodeMessage(stuff);
     }
+    public static String encodeInput(Lexicon lex)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter stuff in English:");
+        String stuff = input.nextLine();
+        return lex.translate(stuff);
+    }
+    
 }
